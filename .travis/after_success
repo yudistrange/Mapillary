@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "#PR#$TRAVIS_PULL_REQUEST# #TAG#$TRAVIS_TAG# #BRANCH#$TRAVIS_BRANCH#"
 if [ "$TRAVIS_PULL_REQUEST" != "" ] && [ "$TRAVIS_TAG" != ""  ]; then
   if [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_PULL_REQUEST" != "false"  ] || [ "$TRAVIS_TAG" != "false"  ]; then
     bash <(curl -s https://codecov.io/bash)
